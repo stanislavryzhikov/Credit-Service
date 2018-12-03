@@ -2,24 +2,24 @@ package ru.itpark;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class creditServiceTest {
+class CreditServiceTest {
     @Test
 
     void calculateCredit(){
         {
-            creditService testCredit = new creditService();
-            double result = testCredit.calculateCredit(1000000, 12, 10);
-            assertEquals(87916.0, result);
+            CreditService testCredit = new CreditService();
+            double result = testCredit.calculateCredit(1_000_000, 12, 10);
+            assertEquals(87916.0, result, 0.01);
         }
         {
-            creditService testCredit = new creditService();
+            CreditService testCredit = new CreditService();
             double result = testCredit.calculateCredit(0, 12, 10);
-            assertEquals(0, result);
+            assertEquals(0, result, 0.01);
         }
         {
-            creditService testCredit = new creditService();
-            double result = testCredit.calculateCredit(1000000, 12, 0);
-            assertEquals(0.0, result);
+            CreditService testCredit = new CreditService();
+            double result = testCredit.calculateCredit(1_000_000, 12, 0);
+            assertEquals(0.0, result, 0.01);
         }
     }
 }
